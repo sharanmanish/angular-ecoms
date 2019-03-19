@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-post-product',
@@ -22,6 +24,7 @@ export class PostProductComponent implements OnInit {
   btnDisabled = false;
 
   constructor(
+    private router: Router,
     private data: DataService,
     private rest: RestApiService,
   ) { }
@@ -92,7 +95,9 @@ export class PostProductComponent implements OnInit {
         );
 
         data['success']
-          ? this.data.success(data['message'])
+          ? this.router.navigate(['profile/myproducts'])
+            .then(() => this.data.success(data['message']))
+            .catch(error => this.data.error(error))
           : this.data.error(data['message']);
       }
     } catch (error) {
