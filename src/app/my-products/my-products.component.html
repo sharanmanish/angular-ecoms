@@ -23,7 +23,7 @@
           <div class="row">
             <div class="col-4 col-md-2">
               <a routerLink="/product/{{ product.id }}">
-              <img src="{{ product.image }}" alt="image" class="img-fluid img-thumbnail">
+              <img [lazyLoad]="product.image" alt="image" class="img-fluid img-thumbnail">
               </a>
             </div>
             <div class="col-5 col-md-8">
