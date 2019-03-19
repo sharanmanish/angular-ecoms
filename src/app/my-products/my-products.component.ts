@@ -9,7 +9,7 @@ import { DataService } from '../data.service';
 })
 export class MyProductsComponent implements OnInit {
 
-  product: any;
+  products: any;
 
   constructor(private data: DataService, private rest: RestApiService) { }
 
@@ -20,7 +20,7 @@ export class MyProductsComponent implements OnInit {
       );
       
       data['success']
-        ? (this.product = data['products']) 
+        ? (this.products = data['products']) 
         : this.data.error(data['message']);
         
     } catch (error) {
