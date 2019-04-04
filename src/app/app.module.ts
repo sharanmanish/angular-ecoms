@@ -21,11 +21,12 @@ import { PostProductComponent } from './post-product/post-product.component';
 import {CommonModule, HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { MyProductsComponent } from './my-products/my-products.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, NgbModule.forRoot(), HttpClientModule, NgbModule, CommonModule, LazyLoadImageModule],
-  declarations: [AppComponent, HomeComponent, MessageComponent, RegistrationComponent, LoginComponent, ProfileComponent, SettingsComponent, AddressComponent, CategoriesComponent, PostProductComponent, MyProductsComponent],
+  declarations: [AppComponent, HomeComponent, MessageComponent, RegistrationComponent, LoginComponent, ProfileComponent, SettingsComponent, AddressComponent, CategoriesComponent, PostProductComponent, MyProductsComponent, CategoryComponent],
   bootstrap: [AppComponent],
   providers: [RestApiService, DataService, AuthGuardService, 
     {
