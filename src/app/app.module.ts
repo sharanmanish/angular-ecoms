@@ -22,11 +22,12 @@ import {CommonModule, HashLocationStrategy, LocationStrategy} from '@angular/com
 import { MyProductsComponent } from './my-products/my-products.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CategoryComponent } from './category/category.component';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, NgbModule.forRoot(), HttpClientModule, NgbModule, CommonModule, LazyLoadImageModule],
-  declarations: [AppComponent, HomeComponent, MessageComponent, RegistrationComponent, LoginComponent, ProfileComponent, SettingsComponent, AddressComponent, CategoriesComponent, PostProductComponent, MyProductsComponent, CategoryComponent],
+  declarations: [AppComponent, HomeComponent, MessageComponent, RegistrationComponent, LoginComponent, ProfileComponent, SettingsComponent, AddressComponent, CategoriesComponent, PostProductComponent, MyProductsComponent, CategoryComponent, ProductComponent],
   bootstrap: [AppComponent],
   providers: [RestApiService, DataService, AuthGuardService, 
     {
