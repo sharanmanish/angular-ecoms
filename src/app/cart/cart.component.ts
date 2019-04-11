@@ -49,7 +49,7 @@ export class CartComponent implements OnInit {
     });
     this.handler = StripeCheckout.configure({
       key: environment.stripeKey,
-      image: 'https://www.logolynx.com/images/logolynx/b2/b23666d57f4e17102209423105dfc442.pngassets/img',
+      image: 'https://www.logolynx.com/images/logolynx/b2/b23666d57f4e17102209423105dfc442.png',
       locale: 'auto',
       token: async stripeToken => {
         let products;
