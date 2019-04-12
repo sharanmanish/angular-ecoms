@@ -21,7 +21,7 @@
         <div *ngFor="let order of orders; let i = index" class="order">
           <div class="row">
             <div class="col-4 col-md-2">
-              <a routerLink="../..profile/order/{{ order._id }}">
+              <a routerLink="../../profile/order/{{ order._id }}">
               <img [lazyLoad]="order.products[0].product.image" alt="image" class="img-fluid img-thumbnail">
               </a>
             </div>
