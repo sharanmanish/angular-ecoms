@@ -1,6 +1,45 @@
 <section id="profile">
   <div class="container p-5">
-    <h4 class="display-4">My Orders</h4>
-    <hr>
+    <app-message></app-message>
+    <div *ngIf="!orders" class="m-auto">
+      <h1 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <h3 *ngIf="orders && !orders.length" class="display-2 text-center mt-5">My Order is Empty</h3>
+    <div *ngIf="orders && orders.length" class="row">
+      <div class="col">
+        <h4 class="display-4">My Orders</h4>
+        <div class="row">
+          <div class="offset-10 col-2 d-none d-md-block">
+            <p>
+              <small class="text-muted">Price</small>
+            </p>
+          </div>
+        </div>
+        <hr class="mt-0">
+        <div *ngFor="let order of orders; let i = index" class="order">
+          <div class="row">
+            <div class="col-4 col-md-2">
+              <a routerLink="/order/{{ order._id }}">
+              <img [lazyLoad]="order.products[0].product.image" alt="image" class="img-fluid img-thumbnail">
+              </a>
+            </div>
+            <div class="col-5 col-md-8">
+              <h5>
+                <a routerLink="/order/{{ order._id }}">{{ order.products[0].product.title }}</a>
+                <p class="m-0">
+                  <small class="text-muted">Count: {{ order.products[0].quantity }}</small>
+                </p>
+              </h5>
+            </div>
+            <div class="col-2">
+              <h6 class="font-weight-bold text-danger">{{ order.totalPrice/100 | currency }}</h6>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

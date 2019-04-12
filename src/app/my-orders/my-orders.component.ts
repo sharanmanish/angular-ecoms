@@ -9,9 +9,19 @@ import { DataService } from '../data.service';
 })
 export class MyOrdersComponent implements OnInit {
 
+  orders: any;
+
   constructor(private data: DataService, private rest: RestApiService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    try {
+      const data = await this.rest.get('http://localhost:3030/api/orders');
+      data['success']
+        ? (this.orders = data['order'])
+        : this.data.success(data['message']);
+    } catch(error) {
+      this.data.error(error['message']);
+    }
   }
 
 }
