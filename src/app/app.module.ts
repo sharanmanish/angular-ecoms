@@ -26,11 +26,12 @@ import { ProductComponent } from './product/product.component';
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { MyOrderDetailComponent } from './my-order-detail/my-order-detail.component';
 
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, NgbModule.forRoot(), HttpClientModule, NgbModule, CommonModule, LazyLoadImageModule],
-  declarations: [AppComponent, HomeComponent, MessageComponent, RegistrationComponent, LoginComponent, ProfileComponent, SettingsComponent, AddressComponent, CategoriesComponent, PostProductComponent, MyProductsComponent, CategoryComponent, ProductComponent, SearchComponent, CartComponent, MyOrdersComponent],
+  declarations: [AppComponent, HomeComponent, MessageComponent, RegistrationComponent, LoginComponent, ProfileComponent, SettingsComponent, AddressComponent, CategoriesComponent, PostProductComponent, MyProductsComponent, CategoryComponent, ProductComponent, SearchComponent, CartComponent, MyOrdersComponent, MyOrderDetailComponent],
   bootstrap: [AppComponent],
   providers: [RestApiService, DataService, AuthGuardService, 
     {
